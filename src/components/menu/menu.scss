@@ -1,0 +1,50 @@
+@import "../../global.scss";
+
+.menu {
+    width: 300px;
+    height: 100vh;
+    background-color: $mainColor;
+    position: fixed;
+    top: 0;
+
+    // to hide the menu in the right side (is related to the "width:300px")
+    right: -300px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+
+    // if there is an active
+    // we use "useState" for this action
+    &.active {
+        right: 0;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 30px;
+        font-weight: 300;
+        color: white;
+
+        // the width is for "hover"
+        //when you hover to stop muving the menu if the name is to big (this case "Experiance")
+        width: 60%;
+
+        li {
+            margin-bottom: 25px;
+
+            a {
+                font-size: inherit;
+                color: inherit;
+                text-decoration: none;
+            }
+
+            &:hover {
+                font-weight: 500;
+            }
+        }
+    }
+}

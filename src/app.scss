@@ -1,0 +1,32 @@
+.app {
+    height: 100vh;
+
+    .sections {
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: lightsalmon;
+        position: relative;
+        top: 70px;
+
+        //when you click to a different section to go smooth
+        scroll-behavior: smooth;
+
+        //when you scroll to a different section
+        scroll-snap-type: y mandatory;
+
+        //hide the right scroll bar
+        scrollbar-width: none; //for firefox
+        &::-webkit-scrollbar {
+            display: none; //other browsers
+        }
+
+        // for each element inside the sections "className" (portfolio, home, work, contact)
+        > * {
+            width: 100vw;
+            height: calc(100vh - 70px);
+
+            //when you scroll to a different section
+            scroll-snap-align: start;
+        }
+    }
+}
